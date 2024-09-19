@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ea562dd8-61a2-41db-b526-6913b4b6b1c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../vue/public/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Apple-Music-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Apple-Music-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Apple-Music.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Apple-TV-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Apple-TV.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Books-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Calculator-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Chick-fil-A.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Clock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Coffee-Starbucks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Contacts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Facetime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Files-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Find-My.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Fitness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Gmail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Google-Chrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Google-Maps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Google.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Hulu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/LinkedIn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Maps.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Messages.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Netflix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/News.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Notes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/PayPal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Phone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Photos-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Photos.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Pinterest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Podcasts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Reddit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Reminders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Safari.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Shortcuts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Snapchat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Spotify.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Stardew-Valley.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Stocks.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Telegram-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/TikTok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Tips.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Translate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Tumblr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Twitch-Games.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Twitter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Uber-Eats.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Uber.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/W-Clan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Walmart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Watch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Weather.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/WhatsApp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/YouTube.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/Zoom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/public/iTunes-Store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/services/CalculatorServices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/services/CropService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/assets/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/assets/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/views/CropSelectionView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/views/CropSelectionView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/views/ResultsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/views/ResultsView.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Exception" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/mmurphy/sdvcalculator/controller/CalculatorController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/mmurphy/sdvcalculator/dao/JdbcCropDao.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2llyMUdcLIGXYdHWaPiJSxbJBWc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.CalculatorControllerTests.executor": "Run",
+    "JUnit.CropTests.executor": "Coverage",
+    "JUnit.SeedTests.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.SdvCalculatorApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.SdvCalculatorApplication">
+    <configuration name="CalculatorControllerTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDVCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mmurphy.sdvcalculator.controllerTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.mmurphy.sdvcalculator.controllerTests" />
+      <option name="MAIN_CLASS_NAME" value="org.mmurphy.sdvcalculator.controllerTests.CalculatorControllerTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-XX:+EnableDynamicAgentLoading " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CropTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDVCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mmurphy.sdvcalculator.modelTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.mmurphy.sdvcalculator.modelTests" />
+      <option name="MAIN_CLASS_NAME" value="org.mmurphy.sdvcalculator.modelTests.CropTests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeedTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SDVCalculator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.mmurphy.sdvcalculator.modelTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.mmurphy.sdvcalculator.modelTests" />
+      <option name="MAIN_CLASS_NAME" value="org.mmurphy.sdvcalculator.modelTests.SeedTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SdvCalculatorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="SDVCalculator" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.mmurphy.sdvcalculator.SdvCalculatorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.CalculatorControllerTests" />
+      <item itemvalue="JUnit.CropTests" />
+      <item itemvalue="JUnit.SeedTests" />
+      <item itemvalue="Spring Boot.SdvCalculatorApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CalculatorControllerTests" />
+        <item itemvalue="JUnit.SeedTests" />
+        <item itemvalue="JUnit.CropTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ea562dd8-61a2-41db-b526-6913b4b6b1c1" name="Changes" comment="" />
+      <created>1725768911085</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725768911085</updated>
+      <workItem from="1725768912659" duration="791000" />
+      <workItem from="1725769707668" duration="29000" />
+      <workItem from="1725926212867" duration="7410000" />
+      <workItem from="1726103903185" duration="11784000" />
+      <workItem from="1726519144548" duration="244000" />
+      <workItem from="1726766852645" duration="1805000" />
+      <workItem from="1726781659545" duration="983000" />
+      <workItem from="1726784909519" duration="57000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SDVCalculator$CropTests.ic" NAME="CropTests Coverage Results" MODIFIED="1726767237246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>org.mmurphy.sdvcalculator.modelTests.*</FILTER>
+    </SUITE>
+  </component>
+</project>
