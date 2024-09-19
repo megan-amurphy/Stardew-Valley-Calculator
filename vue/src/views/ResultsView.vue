@@ -1,41 +1,55 @@
 <template>
   <div class="results-view">
-    <h1>Results</h1>
+    <header>
+      <img src="/sdv-profit-calculator.png" alt="SDV Header" class="header-image" />
+    </header>
 
-    <!-- Display entered crop details -->
-    <div class="data-inputted">
-      <h3>Data Entered:</h3>
-      <p><strong>Crop Name:</strong> {{ cropData.cropName }}</p>
-      <p><strong>Quality:</strong> {{ cropData.quality }}</p>
-      <p><strong>Amount:</strong> {{ cropData.amount }}</p>
-      <p><strong>Purchased From:</strong> {{ cropData.purchaseLocation }}</p>
-    </div>
+    <div class="form-container">
+      <h1>Results</h1>
 
-    <!-- Revenue -->
-    <div class="revenue-section">
-      <h3>Revenue</h3>
-      <p><strong>Total Revenue:</strong> ${{ revenue }}</p>
-      <p><strong>Revenue Calculation:</strong> {{ revenueDetails }}</p>
-    </div>
+      <!-- Display entered crop details -->
+      <div class="data-inputted">
+        <h3>Data Entered:</h3>
+        <div v-for="(crop, index) in cropData" :key="index">
+          <p><strong>Crop Name:</strong> {{ crop.cropName }}</p>
+          <p><strong>Quality:</strong> {{ crop.quality }}</p>
+          <p><strong>Amount:</strong> {{ crop.quantity }}</p>
+          <p v-for="(seed, seedIndex) in crop.seedPurchases" :key="seedIndex">
+            <strong>Seed {{ seedIndex + 1 }} Purchase Location:</strong> {{ seed.purchaseLocation
+            }}<br />
+            <strong>Seed {{ seedIndex + 1 }} Quantity:</strong> {{ seed.quantity }}<br />
+            <strong>Out of Season:</strong> {{ seed.isOutOfSeason ? 'Yes' : 'No' }}
+          </p>
+          <hr />
+        </div>
+      </div>
 
-    <!-- Cost -->
-    <div class="cost-section">
-      <h3>Cost</h3>
-      <p><strong>Total Cost:</strong> ${{ cost }}</p>
-      <p><strong>Cost Calculation:</strong> {{ costDetails }}</p>
-    </div>
+      <!-- Revenue -->
+      <div class="revenue-section">
+        <h3>Revenue</h3>
+        <p><strong>Total Revenue:</strong> ${{ revenue }}</p>
+        <p><strong>Revenue Calculation:</strong> {{ revenueDetails }}</p>
+      </div>
 
-    <!-- Net Profit -->
-    <div class="net-profit-section">
-      <h3>Net Profit</h3>
-      <p><strong>Net Profit:</strong> ${{ netProfit }}</p>
-      <p><strong>Net Profit Calculation:</strong> {{ netProfitDetails }}</p>
-    </div>
+      <!-- Cost -->
+      <div class="cost-section">
+        <h3>Cost</h3>
+        <p><strong>Total Cost:</strong> ${{ cost }}</p>
+        <p><strong>Cost Calculation:</strong> {{ costDetails }}</p>
+      </div>
 
-    <!-- Buttons for exporting and starting over -->
-    <div class="buttons">
-      <button @click="exportData">Export</button>
-      <button @click="startOver">Start Over</button>
+      <!-- Net Profit -->
+      <div class="net-profit-section">
+        <h3>Net Profit</h3>
+        <p><strong>Net Profit:</strong> ${{ netProfit }}</p>
+        <p><strong>Net Profit Calculation:</strong> {{ netProfitDetails }}</p>
+      </div>
+
+      <!-- Buttons for exporting and starting over -->
+      <div class="buttons">
+        <button @click="exportData">Export</button>
+        <button @click="startOver">Start Over</button>
+      </div>
     </div>
   </div>
 </template>
@@ -52,7 +66,6 @@ export default {
     'netProfitDetails'
   ],
   methods: {
-    // Export the data (TODO: define the export format)
     exportData() {
       const data = {
         cropData: this.cropData,
@@ -67,24 +80,63 @@ export default {
       const url = URL.createObjectURL(blob)
       const link = document.createElement('a')
       link.href = url
-      link.setAttribute('download', 'crop_data.json') // TODO: Adjust file format as needed
+      link.setAttribute('download', 'crop_data.json')
       document.body.appendChild(link)
       link.click()
       document.body.removeChild(link)
     },
-    // Emit start-over event to parent component
     startOver() {
-      this.$emit('start-over')
+      this.$router.push({ name: 'cropinput' })
     }
   }
 }
 </script>
 
-<style scoped>
+<!-- Style Section (copied from CropSelectionView.vue) -->
+<style>
 .results-view {
-  /* Add your CSS styling here */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-.buttons {
-  margin-top: 20px;
+
+.form-container {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h3,
+h4 {
+  color: white;
+}
+
+.add-crop-btn {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.calculate-btn {
+  margin-top: auto;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.calculate-btn:hover {
+  background-color: #218838;
 }
 </style>

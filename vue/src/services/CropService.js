@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = '/api/crops'
+const API_URL = 'http://localhost:8080/api/crops'
 
 export default {
   // Fetch all crops
