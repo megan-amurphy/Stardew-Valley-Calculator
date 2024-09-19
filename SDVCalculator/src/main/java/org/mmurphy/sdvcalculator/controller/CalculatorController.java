@@ -33,8 +33,8 @@ public class CalculatorController {
     public ResponseEntity<?> calculateMultipleCrops(
             @RequestBody @Valid List<Crop> crops,
             @RequestBody @Valid List<Seed> seeds,
-            @RequestParam List<Integer> cropQuantities,
-            @RequestParam List<Integer> seedQuantities) {
+            @RequestBody List<Integer> cropQuantities,
+            @RequestBody List<Integer> seedQuantities) {
 
         try {
             // Validate that the sizes of the lists match
