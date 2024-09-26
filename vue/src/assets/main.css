@@ -12,6 +12,7 @@ body {
   width: 100%;
   font-family: 'Roboto', sans-serif; /* Base font family */
   background-color: #000; /* Fallback color */
+  overflow: hidden; /* prevent body from scrolling */
 }
 
 /* Background image to cover the full screen and be responsive */
@@ -27,6 +28,13 @@ body {
   margin-bottom: 20px;
 }
 
+.form-container p,
+.form-container h1,
+.form-container h3,
+.form-container h4 {
+  color: #fff;
+}
+
 /* Main content container */
 .content-container {
   background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
@@ -36,6 +44,8 @@ body {
   max-width: 600px;
   width: 90%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+  max-height: 80vh;
+  overflow-y: auto; /* Enable vertical scrolling within the container */
 }
 
 /* General labels and input fields */

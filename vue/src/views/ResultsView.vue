@@ -10,39 +10,32 @@
       <!-- Display entered crop details -->
       <div class="data-inputted">
         <h3>Data Entered:</h3>
-        <div v-for="(crop, index) in cropData" :key="index">
+        <div v-for="(crop, index) in results" :key="index">
           <p><strong>Crop Name:</strong> {{ crop.cropName }}</p>
-          <p><strong>Quality:</strong> {{ crop.quality }}</p>
-          <p><strong>Amount:</strong> {{ crop.quantity }}</p>
-          <p v-for="(seed, seedIndex) in crop.seedPurchases" :key="seedIndex">
-            <strong>Seed {{ seedIndex + 1 }} Purchase Location:</strong> {{ seed.purchaseLocation
-            }}<br />
-            <strong>Seed {{ seedIndex + 1 }} Quantity:</strong> {{ seed.quantity }}<br />
-            <strong>Out of Season:</strong> {{ seed.isOutOfSeason ? 'Yes' : 'No' }}
+          <p><strong>Quality: </strong> {{ crop.quality}}</p>
+          <p><strong>Crops Sold:</strong> {{ crop.cropQuantity}}</p>
+          <p><strong>Revenue:</strong> {{ crop.revenue }}G</p>
+          <p><strong>Net Profit:</strong> {{ crop.netProfit }}G</p>
+          <p v-if="crop.seedPurchases">
+            <strong>Seed Purchase Details:</strong>
+            <ul>
+              <li v-for="(seed, seedIndex) in crop.seedPurchases" :key="seedIndex">
+                <strong>Seed {{ seedIndex + 1 }} Purchase Location:</strong> {{ seed.purchaseLocation }}<br />
+                <strong>Seed Quantity:</strong> {{ seed.quantity }}<br />
+                <strong>Out of Season:</strong> {{ seed.isOutOfSeason ? 'Yes' : 'No' }}<br />
+                <strong>Seed Cost:</strong> {{ seed.cost }}G
+              </li>
+            </ul>
           </p>
           <hr />
         </div>
       </div>
 
-      <!-- Revenue -->
-      <div class="revenue-section">
-        <h3>Revenue</h3>
-        <p><strong>Total Revenue:</strong> ${{ revenue }}</p>
-        <p><strong>Revenue Calculation:</strong> {{ revenueDetails }}</p>
-      </div>
-
-      <!-- Cost -->
-      <div class="cost-section">
-        <h3>Cost</h3>
-        <p><strong>Total Cost:</strong> ${{ cost }}</p>
-        <p><strong>Cost Calculation:</strong> {{ costDetails }}</p>
-      </div>
-
-      <!-- Net Profit -->
-      <div class="net-profit-section">
-        <h3>Net Profit</h3>
-        <p><strong>Net Profit:</strong> ${{ netProfit }}</p>
-        <p><strong>Net Profit Calculation:</strong> {{ netProfitDetails }}</p>
+      <!-- Grand Total Revenue and Net Profit -->
+      <div class="grand-totals">
+        <h3>Grand Totals</h3>
+        <p><strong>Total Revenue:</strong> {{ totalRevenue }}G</p>
+        <p><strong>Total Net Profit:</strong> {{ totalNetProfit }}G</p>
       </div>
 
       <!-- Buttons for exporting and starting over -->
@@ -56,44 +49,46 @@
 
 <script>
 export default {
-  props: [
-    'cropData',
-    'revenue',
-    'revenueDetails',
-    'cost',
-    'costDetails',
-    'netProfit',
-    'netProfitDetails'
-  ],
+  data() {
+    return {
+      results: [], 
+      totalRevenue: 0,
+      totalNetProfit: 0,
+    };
+  },
+  mounted() {
+    if (this.$route.query.results) {
+      this.results = JSON.parse(this.$route.query.results);
+
+      // Calculate the grand totals for revenue and net profit
+      this.totalRevenue = this.results.reduce((total, crop) => total + crop.revenue, 0);
+      this.totalNetProfit = this.results.reduce((total, crop) => total + crop.netProfit, 0);
+    }
+  },
   methods: {
     exportData() {
       const data = {
-        cropData: this.cropData,
-        revenue: this.revenue,
-        revenueDetails: this.revenueDetails,
-        cost: this.cost,
-        costDetails: this.costDetails,
-        netProfit: this.netProfit,
-        netProfitDetails: this.netProfitDetails
-      }
-      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.setAttribute('download', 'crop_data.json')
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+        results: this.results,
+        totalRevenue: this.totalRevenue,
+        totalNetProfit: this.totalNetProfit,
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'crop_results.json');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     },
     startOver() {
-      this.$router.push({ name: 'cropinput' })
+      this.$router.push({ name: 'cropinput' });
     }
   }
 }
 </script>
 
-<!-- Style Section (copied from CropSelectionView.vue) -->
-<style>
+<style scoped>
 .results-view {
   display: flex;
   flex-direction: column;
@@ -103,7 +98,7 @@ export default {
 }
 
 .form-container {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -111,7 +106,6 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 h3,
@@ -119,13 +113,11 @@ h4 {
   color: white;
 }
 
-.add-crop-btn {
-  margin-top: 10px;
-  margin-bottom: 20px;
+.buttons {
+  margin-top: 20px;
 }
 
-.calculate-btn {
-  margin-top: auto;
+button {
   background-color: #28a745;
   color: white;
   border: none;
@@ -133,10 +125,10 @@ h4 {
   font-size: 1.1rem;
   border-radius: 5px;
   cursor: pointer;
-  align-self: flex-end;
+  margin-right: 10px;
 }
 
-.calculate-btn:hover {
+button:hover {
   background-color: #218838;
 }
 </style>

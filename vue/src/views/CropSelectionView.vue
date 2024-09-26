@@ -90,6 +90,7 @@
 <script>
 import CalculatorService from '../services/CalculatorServices'
 import CropService from '../services/CropService'
+
 export default {
   data() {
     return {
@@ -118,7 +119,6 @@ export default {
         ]
       })
     },
-
     addSeedPurchase(cropIndex) {
       this.cropEntries[cropIndex].seedPurchases.push({
         purchaseLocation: 'Pierre General Store',
@@ -126,8 +126,6 @@ export default {
         isOutOfSeason: false
       })
     },
-
-    // Fetch crop suggestions for autocomplete
     async fetchCropSuggestions(cropEntry) {
       if (cropEntry.cropName.length > 1) {
         try {
@@ -139,27 +137,36 @@ export default {
       }
     },
 
-    // Submit the calculation to the backend
     async submitCalculation() {
       try {
         const response = await CalculatorService.calculate(this.cropEntries)
-        //   // crops, // Crop object from front-end input
-        // cropQuantities,
-        // seeds,
-        // seedQuantities
         const data = response.data
 
-        // Navigate to the ResultsView and pass the calculation results as route params
+        // Log the data being sent to ResultsView
+        console.log('Crop Entries:', this.cropEntries)
+        console.log('Calculated Data:', data)
+
         this.$router.push({
-          name: 'results', // Make sure your route is defined with this name
-          params: {
-            cropData: this.cropEntries,
-            revenue: data.revenue,
-            revenueDetails: data.revenueDetails,
-            cost: data.cost,
-            costDetails: data.costDetails,
-            netProfit: data.netProfit,
-            netProfitDetails: data.netProfitDetails
+          name: 'results',
+          query: {
+            results: JSON.stringify(
+              this.cropEntries.map((entry, index) => ({
+                cropName: entry.cropName,
+                quality: entry.quality,
+                cropQuantity: entry.quantity,
+                seedPurchases: entry.seedPurchases.map((seed) => ({
+                  purchaseLocation: seed.purchaseLocation,
+                  quantity: seed.quantity,
+                  isOutOfSeason: seed.isOutOfSeason
+                })),
+                revenue: data[index].revenue,
+                revenueDetails: data[index].revenueDetails,
+                cost: data[index].cost,
+                costDetails: data[index].costDetails,
+                netProfit: data[index].netProfit,
+                netProfitDetails: data[index].netProfitDetails
+              }))
+            )
           }
         })
       } catch (error) {
@@ -190,6 +197,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-height: 80vh; /* Restrict height to enable scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .crop-entry {

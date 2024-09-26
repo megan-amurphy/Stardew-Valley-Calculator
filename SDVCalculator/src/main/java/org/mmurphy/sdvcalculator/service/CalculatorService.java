@@ -2,6 +2,7 @@ package org.mmurphy.sdvcalculator.service;
 
 import org.mmurphy.sdvcalculator.dao.CropDao;
 import org.mmurphy.sdvcalculator.dao.SeedDao;
+import org.mmurphy.sdvcalculator.dto.CalculationResult;
 import org.mmurphy.sdvcalculator.model.Crop;
 import org.mmurphy.sdvcalculator.model.Seed;
 import org.springframework.stereotype.Component;
@@ -29,11 +30,10 @@ public class CalculatorService {
      * @param seedQuantities List of integers representing the quantity of seeds purchased.
      * @return A list of calculated results (revenue and net profit) for each crop.
      */
-    public List<String> calculateMultipleCrops(List<Crop> crops, List<Seed> seeds,
-                                               List<Integer> cropQuantities, List<Integer> seedQuantities) {
-        List<String> results = new ArrayList<>();
+    public List<CalculationResult> calculateMultipleCrops(List<Crop> crops, List<Seed> seeds,
+                                                          List<Integer> cropQuantities, List<Integer> seedQuantities) {
+        List<CalculationResult> results = new ArrayList<>();
 
-        // Iterate through each crop and its corresponding seed and quantities
         for (int i = 0; i < crops.size(); i++) {
             Crop crop = crops.get(i);
             Seed seed = seeds.get(i);
@@ -48,8 +48,17 @@ public class CalculatorService {
                     cropQuantity, seedQuantity, seed.getPurchaseLocationName(),
                     seed.isOutOfSeason() ? seed.getSeedPriceUpper() : null);
 
-            // Add the results for this crop
-            results.add("Crop: " + crop.getCropName() + ", Revenue: " + revenue + ", Net Profit: " + netProfit);
+            // Create a CalculationResult object for this crop
+            CalculationResult result = new CalculationResult();
+            result.setCropName(crop.getCropName());
+            result.setRevenue(revenue);
+            result.setRevenueDetails("Revenue = price * quantity");
+            result.setCost(seed.getSeedPriceLower() * seedQuantity);
+            result.setCostDetails("Cost = seed price * quantity");
+            result.setNetProfit(netProfit);
+            result.setNetProfitDetails("Net Profit = revenue - total seed costs");
+
+            results.add(result);
         }
 
         return results;

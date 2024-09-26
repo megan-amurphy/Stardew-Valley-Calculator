@@ -91,8 +91,8 @@ public class JdbcSeedDao implements SeedDao {
         String sql = "SELECT s.seed_id, s.seed_name, pl.purchase_location_name, " +
                 "sl.seed_price_lower, sl.seed_price_upper, sl.item_non_gold, sl.is_out_of_season " +
                 "FROM seeds s " +
-                "JOIN crop_seed cs ON s.seed_id = cs.seed_id " +  // Join crop and seed table
-                "JOIN crops c ON cs.crop_id = c.crop_id " +  // Join crops table
+                "JOIN crop_seed cs ON s.seed_id = cs.seed_id " +
+                "JOIN crops c ON cs.crop_id = c.crop_id " +
                 "JOIN seed_location sl ON s.seed_id = sl.seed_id " +
                 "JOIN purchase_location pl ON sl.location_id = pl.purchase_location_id " +
                 "WHERE c.crop_name ILIKE ? AND sl.is_out_of_season = ? AND pl.purchase_location_name ILIKE ?";

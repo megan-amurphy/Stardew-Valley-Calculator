@@ -1,21 +1,28 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:8080/api/calculate' // Adjust if necessary, depending on your backend URL
+const API_URL = 'http://localhost:8080/api/calculate'
 
 export default {
-  // Method to call the calculator endpoint with crop data
-  calculate(crops, cropQuantities, seeds, seedQuantities) {
-    // Create request data
+  calculate(cropEntries) {
     const requestData = {
-      crops, // Crop object from front-end input
-      cropQuantities,
-      seeds,
-      seedQuantities
+      crops: cropEntries.map((entry) => ({
+        cropName: entry.cropName,
+        cropQuality: entry.quality,
+        price: null
+      })),
+      seeds: cropEntries.flatMap((entry) =>
+        entry.seedPurchases.map((seed) => ({
+          seedName: seed.seedName || 'Seed',
+          purchaseLocationName: seed.purchaseLocation,
+          isOutOfSeason: seed.isOutOfSeason
+        }))
+      ),
+      cropQuantities: cropEntries.map((entry) => entry.quantity),
+      seedQuantities: cropEntries.map((entry) =>
+        entry.seedPurchases.reduce((sum, seed) => sum + seed.quantity, 0)
+      ) // Summing the seed quantities per crop
     }
 
-    // Make POST request to the calculator API
-    return axios.post(API_URL, null, {
-      body: requestData
-    })
+    return axios.post(API_URL, requestData)
   }
 }
